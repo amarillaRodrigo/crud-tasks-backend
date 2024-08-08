@@ -21,7 +21,6 @@ Utiliza Express para el servidor, MySQL para la base de datos e incluye middlewa
     ```sh
     npm install
     ```
-3. Crear una base de datos
     
 
 ## Configura la base de datos
