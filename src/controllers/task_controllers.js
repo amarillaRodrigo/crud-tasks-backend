@@ -1,7 +1,5 @@
 import { connection } from "../database/db.js";
-import { validationResult } from "express-validator";	
 export const controller = {
-
   // Obtener tareas
   getAllTasks: async (req, res) => {
     try {

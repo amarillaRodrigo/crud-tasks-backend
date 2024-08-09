@@ -1,7 +1,10 @@
 import express from "express";
 import { controller } from "../controllers/task_controllers.js";
 import { body } from "express-validator";
-import { tasksValidations } from "../validations/validations.js";
+import {
+  tasksValidations,
+  tasksValidationsUpdate,
+} from "../validations/task_validations.js";
 import { applyvalidations } from "../applyValidations/applyValidations.js";
 
 export const taskRoutes = express.Router();
@@ -16,7 +19,13 @@ taskRoutes.get("/:id", body(), controller.getTaskById);
 taskRoutes.post("/", tasksValidations, applyvalidations, controller.createTask);
 
 //Actualizar tarea
-taskRoutes.put("/:id", body(), tasksValidations, applyvalidations, controller.updateTask);
+taskRoutes.put(
+  "/:id",
+  body(),
+  tasksValidationsUpdate,
+  applyvalidations,
+  controller.updateTask
+);
 
 //Eliminar tarea
 taskRoutes.delete("/:id", body(), controller.deleteTask);
